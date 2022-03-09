@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="modal-container" id="modal-container">
+        <form action="">
+          <div class="modal">
+          <h2>New Project</h2>
+          <div class="modal-el project-title-box">
+            <label for="project-title">Project title</label>
+            <input
+              type="text"
+              class="project-title"
+              id="project-title"
+              name="project-title"
+            />
+          </div>
+          <div class="modal-el description-box">
+            <label for="description">Project description: </label>
+            <textarea
+              name="description"
+              id="description"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+          <div class="modal-el due-date-box">
+            <label for="due-date">Due date:</label>
+            <input type="date" id="date" name="date" value="2022-01-01" />
+          </div>
+          <div class="modal-el priority-box">
+            <p>Priority</p>
+            <input
+              type="radio"
+              id="low"
+              name="priority"
+              value="low"
+              unchecked
+            />
+            <label for="low">Low</label>
+            <input
+              type="radio"
+              id="medium"
+              name="priority"
+              value="medium"
+              unchecked
+            />
+            <label for="medium">Medium</label>
+            <input
+              type="radio"
+              id="high"
+              name="priority"
+              value="high"
+              checked
+            />
+            <label for="high">high</label>
+          </div>
+          <button id="create" type="button">create</button>
+        </form>
+      </div>
+    </div>
+    <div id="content">
+      <div id="header">
+        <h1>Organizatron</h1>
+      </div>
+      <div id="main">
+        <nav class="navbar">
+          <ul>
+            <li class="all-projects" id="all-projects">
+              Projects 
+            </li>
+            <li>New Project <button id="add-project" class="add-project">+</button></li>
+          </ul>
+        </nav>
+        <div class="right-side" id="right-side"></div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,191 @@
+/* :root {
+  font-size: 16px;
+} */
+
+body {
+  margin: 0;
+  height: 100vh;
+  /* box-sizing: border-box; */
+}
+
+/* body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: purple;
+} */
+
+#content {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 80px 0.9fr;
+}
+
+#header {
+  grid-row: 1;
+  background-color: blue;
+}
+
+h1 {
+  margin: 0;
+}
+
+#main {
+  grid-row: 2;
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: 0.25fr 0.75fr;
+}
+
+.navbar {
+  grid-column: 1;
+  background-color: aquamarine;
+  transition: 2s;
+}
+
+.all-projects:hover {
+  cursor: pointer;
+}
+
+.add-project {
+  padding: 15px 15px;
+}
+
+.right-side {
+  height: 100vh;
+  grid-column: 2;
+  border: 2px solid black;
+  /* height: 100%; */
+}
+
+/* projects page ----------------------------------------*/
+
+.projects-grid {
+  /* position: relative; THIS MADE IT SO MODAL NOT CLICKABLE*/
+  /* height: 100vh; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: start;
+  justify-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-summary {
+  border: 1px solid black;
+  width: 270px;
+  height: 350px;
+}
+
+/* MODAL ----------------------------------------------- */
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(2, 2, 2, 0.2);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  position: relative;
+  background-color: white;
+  height: 500px;
+  width: 700px;
+  /* padding: 30px; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row: repeat(4, 1fr);
+  border: 1px solid black;
+  align-items: center;
+  justify-items: center;
+}
+
+h2 {
+  margin: 0;
+  grid-column: 1 / -1;
+  border: 1px solid black;
+}
+
+.project-title-box {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.due-date-box {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.priority-box {
+  grid-row: 4;
+  grid-column: 1;
+}
+
+.description-box {
+  grid-row: 2 / 4;
+  grid-column: 2;
+}
+
+input {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.modal-el {
+  margin: 0;
+  border: 1px solid black;
+}
+
+/* INDIVIDUAL PROJECTS PAGE */
+
+.each-prj-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.prj-grid-date {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.prj-grid-title {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.prj-grid-priority {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.prj-grid-description {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.prj-grid-tasks {
+  grid-row: 3;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.prj-tasks-title {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.prj-task {
+  grid-column: 1 / -1;
+}
