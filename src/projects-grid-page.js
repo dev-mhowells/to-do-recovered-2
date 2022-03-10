@@ -2,9 +2,11 @@ import { clearPage } from ".";
 import { rightSide } from ".";
 import { projectClasses } from ".";
 import { currentProject } from ".";
+import { projectsGrid } from ".";
 import { projectPage } from "./project-page";
 
-export const projectsGrid = document.createElement("div");
+// export const projectsGrid = document.createElement("div");
+
 export const createProjectsGrid = function () {
   clearPage(rightSide);
   projectsGrid.classList.add("projects-grid");

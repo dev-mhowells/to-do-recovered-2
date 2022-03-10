@@ -1,6 +1,5 @@
 import "./style.css";
-// import { projectPage } from "./project-page";
-import { projectsGrid } from "./projects-grid-page";
+// import { projectsGrid } from "./projects-grid-page";
 import { createProjectsGrid } from "./projects-grid-page";
 import { popProjectectsGrid } from "./projects-grid-page";
 import { modalFunction } from "./modal";
@@ -11,7 +10,7 @@ const main = document.getElementById("main");
 export const rightSide = document.getElementById("right-side");
 const addProjectBtn = document.getElementById("add-project"); // In Nav
 
-// const createBtn = document.getElementById("create"); // In modal
+export const projectsGrid = document.createElement("div");
 
 // CLEAR FUNCTIONS -------------------------------------------------------------
 
@@ -28,8 +27,6 @@ export let currentProject = 0; // TRACKS CURRENT PROJECT IN ADD TASK BUTTON MODI
 
 // -------------------- TASKS GRID --------------------------------
 
-// projectPage(rightSide);
-
 // TARGET MODAL -----------
 
 const modal_container = document.getElementById("modal-container");
@@ -39,6 +36,7 @@ const modal_container = document.getElementById("modal-container");
 // MODAL FUNCTIONS --------------------------------------------------------------
 const openModal = function () {
   modal_container.style.display = "flex";
+  console.log("testing");
 };
 
 export const closeModal = function () {
@@ -64,7 +62,8 @@ export class Project {
 const allProjects = document.getElementById("all-projects");
 allProjects.addEventListener("click", function () {
   console.log("test");
-  createProjectsGrid();
   clearPage(projectsGrid);
+  createProjectsGrid();
+  // clearPage(projectsGrid);
   popProjectectsGrid();
 });

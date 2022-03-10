@@ -23,6 +23,8 @@ export const projectPage = function (parent) {
   prjGridDesc.classList.add("prj-grid-description");
   eachPrjGrid.appendChild(prjGridDesc);
 
+  // USES CLASS INFO TO POPULATE PAGE
+
   prjGridDate.textContent = "Date";
   prjGridTitle.textContent = projectClasses[currentProject].projectTitle;
   prjGridPriority.textContent = "Priority";
