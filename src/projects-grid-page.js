@@ -6,14 +6,13 @@ import { projectsGrid } from ".";
 import { projectPage } from "./project-page";
 
 // export const projectsGrid = document.createElement("div");
-
-export const createProjectsGrid = function () {
+const createProjectsGrid = function () {
   clearPage(rightSide);
   projectsGrid.classList.add("projects-grid");
   rightSide.appendChild(projectsGrid);
 };
 
-export const popProjectectsGrid = function () {
+const popProjectectsGrid = function () {
   for (let i = 0; i < projectClasses.length; i++) {
     console.log(projectClasses[i]);
 
@@ -42,4 +41,9 @@ export const popProjectectsGrid = function () {
       projectPage(rightSide);
     });
   }
+};
+
+export const projectsGridPage = function () {
+  createProjectsGrid();
+  popProjectectsGrid();
 };

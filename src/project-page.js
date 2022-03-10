@@ -25,9 +25,9 @@ export const projectPage = function (parent) {
 
   // USES CLASS INFO TO POPULATE PAGE
 
-  prjGridDate.textContent = "Date";
+  prjGridDate.textContent = projectClasses[currentProject].dueDate;
   prjGridTitle.textContent = projectClasses[currentProject].projectTitle;
-  prjGridPriority.textContent = "Priority";
+  prjGridPriority.textContent = projectClasses[currentProject].priority;
   prjGridDesc.textContent = projectClasses[currentProject].projectDescription;
 
   const prjGridTasks = document.createElement("div"); // NEW GRID
