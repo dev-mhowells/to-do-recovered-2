@@ -1,14 +1,16 @@
 import "./style.css";
 import { projectPage } from "./project-page";
+import { projectsGrid } from "./projects-grid-page";
+import { createProjectsGrid } from "./projects-grid-page";
 import { createProjectSummary } from "./modal";
 
 // ------------------------DOM----------------------------------
 
 const main = document.getElementById("main");
-const rightSide = document.getElementById("right-side");
+export const rightSide = document.getElementById("right-side");
 const addProjectBtn = document.getElementById("add-project"); // In Nav
 
-const createBtn = document.getElementById("create"); // In modal
+// const createBtn = document.getElementById("create"); // In modal
 
 // CLEAR FUNCTIONS -------------------------------------------------------------
 
@@ -19,12 +21,12 @@ export const clearPage = function (element) {
 };
 
 // ----------------------Projects GRID -------------------------------
-export const projectsGrid = document.createElement("div");
-const createProjectsGrid = function () {
-  clearPage(rightSide);
-  projectsGrid.classList.add("projects-grid");
-  rightSide.appendChild(projectsGrid);
-};
+// export const projectsGrid = document.createElement("div");
+// export const createProjectsGrid = function () {
+//   clearPage(rightSide);
+//   projectsGrid.classList.add("projects-grid");
+//   rightSide.appendChild(projectsGrid);
+// };
 
 export const projectClasses = [];
 export let currentProject = 0; // TRACKS CURRENT PROJECT IN ADD TASK BUTTON MODIFIED AS BUTTON CREATED, STORED BY IT.
@@ -44,7 +46,7 @@ const openModal = function () {
   modal_container.style.display = "flex";
 };
 
-const closeModal = function () {
+export const closeModal = function () {
   modal_container.style.display = "none";
 };
 
@@ -52,11 +54,11 @@ const closeModal = function () {
 
 addProjectBtn.addEventListener("click", openModal);
 
-createBtn.addEventListener("click", function () {
-  closeModal();
-  createProjectsGrid();
-  createProjectSummary();
-});
+// createBtn.addEventListener("click", function () {
+//   closeModal();
+//   createProjectsGrid();
+//   createProjectSummary();
+// });
 
 // POPULATE PROJECTS GRID -------------------------------------------------
 
