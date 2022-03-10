@@ -7,6 +7,21 @@
     <title>Document</title>
   </head>
   <body>
+    <div class="tasks-modal-container" id="tasks-modal-container">
+      <div class="tasks-modal" id="tasks-modal">
+
+        <input type="text" class="task-name" id="task-name" placeholder="task..">
+
+
+        <textarea cols="60" rows="6" type="textarea" class="task-description" id="task-description" placeholder="task description"></textarea>
+
+        <div class="important-box">
+        <label for="important">Mark as important</label>  
+        <input type="checkbox" class="important" id="important" name="important">
+      </div>
+      <button class="add-new-task" id="add-new-task">Add</button>
+</div>
+    </div>
     <div class="modal-container" id="modal-container">
         <form action="">
           <div class="modal">
@@ -63,6 +78,9 @@
           <button id="create" type="button">create</button>
         </form>
       </div>
+      <!-- <div class="tasks-modal-container" id="tasks-modal-container">
+        <div class="tasks-modal" id="tasks-modal"></div>
+      </div> -->
     </div>
     <div id="content">
       <div id="header">

@@ -2,6 +2,7 @@ import "./style.css";
 // import { projectsGridPage } from "./projects-grid-page";
 import { modalFunction } from "./modal";
 import { initNav } from "./nav";
+import { taskModalInit } from "./task-modal";
 
 // ------------------------DOM----------------------------------
 
@@ -49,3 +50,4 @@ addProjectBtn.addEventListener("click", openModal);
 
 modalFunction();
 initNav();
+taskModalInit();

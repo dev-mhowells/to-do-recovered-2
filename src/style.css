@@ -33,7 +33,7 @@ body::-webkit-scrollbar-thumb {
 
 h1 {
   margin: 0;
-  color: green;
+  color: orange;
 }
 
 #main {
@@ -183,10 +183,100 @@ input {
 }
 
 .prj-tasks-title {
-  grid-column: 1 / -1;
+  grid-column: 1 / -2;
+  grid-row: 1;
+}
+
+.prj-tasks-add {
+  grid-column: 3;
   grid-row: 1;
 }
 
 .prj-task {
   grid-column: 1 / -1;
 }
+
+/* TASKS MODAL ------------------------------------------*/
+
+.tasks-modal-container {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(2, 2, 2, 0.2);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.tasks-modal {
+  position: relative;
+  background-color: white;
+  height: 250px;
+  width: 700px;
+  /* padding: 30px; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  border: 1px solid black;
+  align-items: center;
+  justify-items: center;
+}
+
+.task-name {
+  width: 450px;
+
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.task-description {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
+.important-box {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.add-new-task {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+/* h2 {
+  margin: 0;
+  grid-column: 1 / -1;
+  border: 1px solid black;
+}
+
+.project-title-box {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.due-date-box {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.priority-box {
+  grid-row: 4;
+  grid-column: 1;
+}
+
+.description-box {
+  grid-row: 2 / 4;
+  grid-column: 2;
+}
+
+input {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.modal-el {
+  margin: 0;
+  border: 1px solid black;
+} */

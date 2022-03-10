@@ -34,6 +34,18 @@ export const projectPage = function (parent) {
   prjGridTasks.classList.add("prj-grid-tasks");
   eachPrjGrid.appendChild(prjGridTasks);
 
+  // TASKS GRID CONTENT -----------------------------------------
+  const openTaskModalBtn = document.createElement("button");
+  openTaskModalBtn.classList.add("prj-grid-add");
+  prjGridTasks.appendChild(openTaskModalBtn);
+  openTaskModalBtn.textContent = "Add Task";
+
+  openTaskModalBtn.addEventListener("click", function () {
+    const taskModalContainer = document.getElementById("tasks-modal-container");
+    taskModalContainer.style.display = "flex";
+    console.log("show task modal");
+  });
+
   const prjtasksTitle = document.createElement("div");
   prjtasksTitle.classList.add("prj-tasks-title");
   prjGridTasks.appendChild(prjtasksTitle);
