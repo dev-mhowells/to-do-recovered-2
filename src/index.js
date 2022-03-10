@@ -1,5 +1,6 @@
 import "./style.css";
 import { projectPage } from "./project-page";
+import { createProjectSummary } from "./modal";
 
 // ------------------------DOM----------------------------------
 
@@ -11,14 +12,14 @@ const createBtn = document.getElementById("create"); // In modal
 
 // CLEAR FUNCTIONS -------------------------------------------------------------
 
-const clearPage = function (element) {
+export const clearPage = function (element) {
   while (element.firstChild) {
     element.removeChild(element.firstChild);
   }
 };
 
 // ----------------------Projects GRID -------------------------------
-const projectsGrid = document.createElement("div");
+export const projectsGrid = document.createElement("div");
 const createProjectsGrid = function () {
   clearPage(rightSide);
   projectsGrid.classList.add("projects-grid");
@@ -59,7 +60,7 @@ createBtn.addEventListener("click", function () {
 
 // POPULATE PROJECTS GRID -------------------------------------------------
 
-const popProjectectsGrid = function () {
+export const popProjectectsGrid = function () {
   for (let i = 0; i < projectClasses.length; i++) {
     console.log(projectClasses[i]);
 
@@ -92,28 +93,28 @@ const popProjectectsGrid = function () {
 
 // GET INPUT --------------------------------------------------------------
 
-const getTitle = function () {
-  const projectTitleInput = document.getElementById("project-title").value;
-  return projectTitleInput;
-};
+// const getTitle = function () {
+//   const projectTitleInput = document.getElementById("project-title").value;
+//   return projectTitleInput;
+// };
 
-const getDescription = function () {
-  const projectDescriptionInput = document.getElementById("description").value;
-  return projectDescriptionInput;
-};
+// const getDescription = function () {
+//   const projectDescriptionInput = document.getElementById("description").value;
+//   return projectDescriptionInput;
+// };
 
-const createProjectSummary = function () {
-  // CLEAR RIGHT SIDE
-  clearPage(projectsGrid);
-  // CREATE NEW CLASS
-  const newProject = new Project(getTitle(), getDescription());
-  // ADD TO CLASS LIST
-  projectClasses.push(newProject);
-  // POPULATE PROJECTS GRID
-  popProjectectsGrid();
-};
+// const createProjectSummary = function () {
+//   // CLEAR RIGHT SIDE
+//   clearPage(projectsGrid);
+//   // CREATE NEW CLASS
+//   const newProject = new Project(getTitle(), getDescription());
+//   // ADD TO CLASS LIST
+//   projectClasses.push(newProject);
+//   // POPULATE PROJECTS GRID
+//   popProjectectsGrid();
+// };
 
-class Project {
+export class Project {
   constructor(projectTitle, projectDescription, dueDate, priority) {
     this.projectTitle = projectTitle;
     this.projectDescription = projectDescription;
