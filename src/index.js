@@ -1,33 +1,26 @@
 import "./style.css";
-import { projectsGridPage } from "./projects-grid-page";
+// import { projectsGridPage } from "./projects-grid-page";
 import { modalFunction } from "./modal";
+import { initNav } from "./nav";
 
 // ------------------------DOM----------------------------------
 
 const main = document.getElementById("main");
 export const rightSide = document.getElementById("right-side");
 const addProjectBtn = document.getElementById("add-project"); // In Nav
-
 export const projectsGrid = document.createElement("div");
-
 const modal_container = document.getElementById("modal-container");
 
 // ---------------------------MAIN FUNCTIONS---------------------------------------
 
+// CLEAR
 export const clearPage = function (element) {
   while (element.firstChild) {
     element.removeChild(element.firstChild);
   }
 };
 
-// ----------------------Projects GRID -------------------------------
-
-export const projectClasses = [];
-export let currentProject = 0; // TRACKS CURRENT PROJECT IN ADD TASK BUTTON MODIFIED AS BUTTON CREATED, STORED BY IT.
-
-//-------------------------FUNCTIONS-------------------------------
-
-// MODAL FUNCTIONS --------------------------------------------------------------
+// OPEN CLOSE MODAL
 const openModal = function () {
   modal_container.style.display = "flex";
   console.log("testing");
@@ -37,11 +30,10 @@ export const closeModal = function () {
   modal_container.style.display = "none";
 };
 
-// CLICK EVENTS -------------------------------------------------------------
+// ----------------------PROJECTS GRID TRACKING -------------------------------
 
-addProjectBtn.addEventListener("click", openModal);
-
-modalFunction();
+export const projectClasses = [];
+export let currentProject = 0; // TRACKS CURRENT PROJECT IN ADD TASK BUTTON MODIFIED AS BUTTON CREATED, STORED BY IT.
 
 export class Project {
   constructor(projectTitle, projectDescription, dueDate, priority) {
@@ -53,9 +45,7 @@ export class Project {
   }
 }
 
-const allProjects = document.getElementById("all-projects");
-allProjects.addEventListener("click", function () {
-  console.log("test");
-  clearPage(projectsGrid);
-  projectsGridPage();
-});
+addProjectBtn.addEventListener("click", openModal);
+
+modalFunction();
+initNav();
