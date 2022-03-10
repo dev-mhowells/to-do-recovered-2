@@ -1,8 +1,9 @@
 import "./style.css";
-import { projectPage } from "./project-page";
+// import { projectPage } from "./project-page";
 import { projectsGrid } from "./projects-grid-page";
 import { createProjectsGrid } from "./projects-grid-page";
-import { createProjectSummary } from "./modal";
+import { popProjectectsGrid } from "./projects-grid-page";
+import { modalFunction } from "./modal";
 
 // ------------------------DOM----------------------------------
 
@@ -21,12 +22,6 @@ export const clearPage = function (element) {
 };
 
 // ----------------------Projects GRID -------------------------------
-// export const projectsGrid = document.createElement("div");
-// export const createProjectsGrid = function () {
-//   clearPage(rightSide);
-//   projectsGrid.classList.add("projects-grid");
-//   rightSide.appendChild(projectsGrid);
-// };
 
 export const projectClasses = [];
 export let currentProject = 0; // TRACKS CURRENT PROJECT IN ADD TASK BUTTON MODIFIED AS BUTTON CREATED, STORED BY IT.
@@ -54,67 +49,7 @@ export const closeModal = function () {
 
 addProjectBtn.addEventListener("click", openModal);
 
-// createBtn.addEventListener("click", function () {
-//   closeModal();
-//   createProjectsGrid();
-//   createProjectSummary();
-// });
-
-// POPULATE PROJECTS GRID -------------------------------------------------
-
-export const popProjectectsGrid = function () {
-  for (let i = 0; i < projectClasses.length; i++) {
-    console.log(projectClasses[i]);
-
-    const projectSummary = document.createElement("div");
-    projectSummary.classList.add("project-summary");
-    projectsGrid.appendChild(projectSummary);
-
-    const projectTitleDisplay = document.createElement("h3");
-    projectSummary.appendChild(projectTitleDisplay);
-    projectTitleDisplay.textContent = projectClasses[i].projectTitle;
-
-    const projectDescriptionDisplay = document.createElement("p");
-    projectSummary.appendChild(projectDescriptionDisplay);
-    projectDescriptionDisplay.textContent =
-      projectClasses[i].projectDescription;
-
-    const addTask = document.createElement("button");
-    addTask.textContent = "Add Tasks";
-    projectSummary.appendChild(addTask);
-
-    addTask.addEventListener("click", function () {
-      currentProject = i;
-      console.log(currentProject);
-      console.log(projectClasses[i]);
-      clearPage(rightSide);
-      projectPage(rightSide);
-    });
-  }
-};
-
-// GET INPUT --------------------------------------------------------------
-
-// const getTitle = function () {
-//   const projectTitleInput = document.getElementById("project-title").value;
-//   return projectTitleInput;
-// };
-
-// const getDescription = function () {
-//   const projectDescriptionInput = document.getElementById("description").value;
-//   return projectDescriptionInput;
-// };
-
-// const createProjectSummary = function () {
-//   // CLEAR RIGHT SIDE
-//   clearPage(projectsGrid);
-//   // CREATE NEW CLASS
-//   const newProject = new Project(getTitle(), getDescription());
-//   // ADD TO CLASS LIST
-//   projectClasses.push(newProject);
-//   // POPULATE PROJECTS GRID
-//   popProjectectsGrid();
-// };
+modalFunction();
 
 export class Project {
   constructor(projectTitle, projectDescription, dueDate, priority) {
