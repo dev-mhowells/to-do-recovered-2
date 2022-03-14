@@ -1,6 +1,8 @@
 import "./style.css";
 import { projectClasses } from ".";
 import { currentProject } from ".";
+import { taskModalContainer } from ".";
+import { prjGridTasks } from ".";
 
 export const projectPage = function (parent) {
   const eachPrjGrid = document.createElement("div");
@@ -30,25 +32,24 @@ export const projectPage = function (parent) {
   prjGridPriority.textContent = projectClasses[currentProject].priority;
   prjGridDesc.textContent = projectClasses[currentProject].projectDescription;
 
-  const prjGridTasks = document.createElement("div"); // NEW GRID
+  // const prjGridTasks = document.createElement("div"); // NEW GRID
   prjGridTasks.classList.add("prj-grid-tasks");
   eachPrjGrid.appendChild(prjGridTasks);
 
   // TASKS GRID CONTENT -----------------------------------------
   const openTaskModalBtn = document.createElement("button");
   openTaskModalBtn.classList.add("prj-grid-add");
-  prjGridTasks.appendChild(openTaskModalBtn);
+  eachPrjGrid.appendChild(openTaskModalBtn);
   openTaskModalBtn.textContent = "Add Task";
 
   openTaskModalBtn.addEventListener("click", function () {
-    const taskModalContainer = document.getElementById("tasks-modal-container");
     taskModalContainer.style.display = "flex";
     console.log("show task modal");
   });
 
   const prjtasksTitle = document.createElement("div");
   prjtasksTitle.classList.add("prj-tasks-title");
-  prjGridTasks.appendChild(prjtasksTitle);
+  eachPrjGrid.appendChild(prjtasksTitle);
 
   const prjtasks1 = document.createElement("div");
   prjtasks1.classList.add("prj-task");

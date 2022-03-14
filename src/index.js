@@ -12,6 +12,11 @@ const addProjectBtn = document.getElementById("add-project"); // In Nav
 export const projectsGrid = document.createElement("div");
 const modal_container = document.getElementById("modal-container");
 
+export const taskModalContainer = document.getElementById(
+  "tasks-modal-container"
+);
+
+export const prjGridTasks = document.createElement("div"); // NEW GRID
 // ---------------------------MAIN FUNCTIONS---------------------------------------
 
 // CLEAR
@@ -42,7 +47,17 @@ export class Project {
     this.projectDescription = projectDescription;
     this.dueDate = dueDate;
     this.priority = priority;
-    this.todos = [];
+    // this.todos = [];
+  }
+}
+
+export const tasksArray = [];
+
+export class Task {
+  constructor(taskName, taskDescription, important) {
+    this.taskName = taskName;
+    this.taskDescription = taskDescription;
+    this.important = important;
   }
 }
 
