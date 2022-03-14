@@ -47,7 +47,7 @@ export class Project {
     this.projectDescription = projectDescription;
     this.dueDate = dueDate;
     this.priority = priority;
-    // this.todos = [];
+    this.todos = [];
   }
 }
 

@@ -28,29 +28,57 @@ export const taskModalInit = function () {
       getTaskDescription(),
       getImportant()
     );
-    tasksArray.push(newTask);
+    tasksArray.push(newTask); // TEMPORARY
+
+    projectClasses[currentProject].todos.push(newTask);
+    console.log(projectClasses[currentProject].todos[0].taskName);
+  };
+
+  const popTasksGrid = function () {
+    for (let i = 0; i < projectClasses[currentProject].todos.length; i++) {
+      const taskNameOutput = document.createElement("div");
+      const taskDescriptionOutput = document.createElement("div");
+      const taskImportantOutput = document.createElement("div");
+
+      taskNameOutput.textContent =
+        projectClasses[currentProject].todos[i].taskName;
+      prjGridTasks.appendChild(taskNameOutput);
+
+      taskDescriptionOutput.textContent =
+        projectClasses[currentProject].todos[i].taskDescription;
+      prjGridTasks.appendChild(taskDescriptionOutput);
+
+      taskImportantOutput.textContent =
+        projectClasses[currentProject].todos[i].important;
+      prjGridTasks.appendChild(taskImportantOutput);
+
+      const deleteTaskBtn = document.createElement("button");
+      prjGridTasks.appendChild(deleteTaskBtn);
+    }
   };
 
   const addNewTaskBtn = document.getElementById("add-new-task");
 
   addNewTaskBtn.addEventListener("click", function () {
     createTask();
-    console.log(tasksArray);
+    // console.log(tasksArray);
     clearPage(prjGridTasks);
     taskModalContainer.style.display = "none";
+    popTasksGrid();
 
-    const taskNameOutput = document.createElement("div");
-    const taskDescriptionOutput = document.createElement("div");
-    const taskImportantOutput = document.createElement("div");
+    // const taskNameOutput = document.createElement("div");
+    // const taskDescriptionOutput = document.createElement("div");
+    // const taskImportantOutput = document.createElement("div");
 
-    taskNameOutput.textContent = getTaskName();
-    prjGridTasks.appendChild(taskNameOutput);
+    // taskNameOutput.textContent =
+    //   projectClasses[currentProject].todos[0].taskName;
+    // prjGridTasks.appendChild(taskNameOutput);
 
-    taskDescriptionOutput.textContent = getTaskDescription();
-    prjGridTasks.appendChild(taskDescriptionOutput);
+    // taskDescriptionOutput.textContent = getTaskDescription();
+    // prjGridTasks.appendChild(taskDescriptionOutput);
 
-    taskImportantOutput.textContent = getImportant();
-    prjGridTasks.appendChild(taskImportantOutput);
+    // taskImportantOutput.textContent = getImportant();
+    // prjGridTasks.appendChild(taskImportantOutput);
   });
 };
 

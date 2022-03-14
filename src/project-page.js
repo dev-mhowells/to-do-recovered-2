@@ -3,6 +3,7 @@ import { projectClasses } from ".";
 import { currentProject } from ".";
 import { taskModalContainer } from ".";
 import { prjGridTasks } from ".";
+import { clearPage } from ".";
 
 export const projectPage = function (parent) {
   const eachPrjGrid = document.createElement("div");
@@ -60,6 +61,8 @@ export const projectPage = function (parent) {
   prjGridTasks.appendChild(prjtasks2);
 
   prjtasksTitle.textContent = "TASKS:";
-  prjtasks1.textContent = "task 1";
-  prjtasks2.textContent = "task 2";
+  // prjtasks1.textContent = "task 1";
+  // prjtasks2.textContent = "task 2";
+
+  // clearPage(prjGridTasks);
 };
