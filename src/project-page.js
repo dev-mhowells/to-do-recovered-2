@@ -4,6 +4,7 @@ import { currentProject } from ".";
 import { taskModalContainer } from ".";
 import { prjGridTasks } from ".";
 import { clearPage } from ".";
+import { popTasksGrid } from "./task-modal";
 
 export const projectPage = function (parent) {
   const eachPrjGrid = document.createElement("div");
@@ -64,5 +65,6 @@ export const projectPage = function (parent) {
   // prjtasks1.textContent = "task 1";
   // prjtasks2.textContent = "task 2";
 
-  // clearPage(prjGridTasks);
+  clearPage(prjGridTasks);
+  popTasksGrid();
 };
