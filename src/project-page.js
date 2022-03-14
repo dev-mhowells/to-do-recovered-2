@@ -53,17 +53,7 @@ export const projectPage = function (parent) {
   prjtasksTitle.classList.add("prj-tasks-title");
   eachPrjGrid.appendChild(prjtasksTitle);
 
-  const prjtasks1 = document.createElement("div");
-  prjtasks1.classList.add("prj-task");
-  prjGridTasks.appendChild(prjtasks1);
-
-  const prjtasks2 = document.createElement("div");
-  prjtasks2.classList.add("prj-task");
-  prjGridTasks.appendChild(prjtasks2);
-
   prjtasksTitle.textContent = "TASKS:";
-  // prjtasks1.textContent = "task 1";
-  // prjtasks2.textContent = "task 2";
 
   clearPage(prjGridTasks);
   popTasksGrid();

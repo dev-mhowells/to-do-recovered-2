@@ -7,24 +7,35 @@ import { prjGridTasks } from ".";
 
 export const popTasksGrid = function () {
   for (let i = 0; i < projectClasses[currentProject].todos.length; i++) {
-    const taskNameOutput = document.createElement("div");
-    const taskDescriptionOutput = document.createElement("div");
-    const taskImportantOutput = document.createElement("div");
+    if (projectClasses[currentProject].todos[i] !== undefined) {
+      const taskNameOutput = document.createElement("div");
+      const taskDescriptionOutput = document.createElement("div");
+      const taskImportantOutput = document.createElement("div");
 
-    taskNameOutput.textContent =
-      projectClasses[currentProject].todos[i].taskName;
-    prjGridTasks.appendChild(taskNameOutput);
+      taskNameOutput.textContent =
+        projectClasses[currentProject].todos[i].taskName;
+      prjGridTasks.appendChild(taskNameOutput);
 
-    taskDescriptionOutput.textContent =
-      projectClasses[currentProject].todos[i].taskDescription;
-    prjGridTasks.appendChild(taskDescriptionOutput);
+      taskDescriptionOutput.textContent =
+        projectClasses[currentProject].todos[i].taskDescription;
+      prjGridTasks.appendChild(taskDescriptionOutput);
 
-    taskImportantOutput.textContent =
-      projectClasses[currentProject].todos[i].important;
-    prjGridTasks.appendChild(taskImportantOutput);
+      taskImportantOutput.textContent =
+        projectClasses[currentProject].todos[i].important;
+      prjGridTasks.appendChild(taskImportantOutput);
 
-    const deleteTaskBtn = document.createElement("button");
-    prjGridTasks.appendChild(deleteTaskBtn);
+      const deleteTaskBtn = document.createElement("button");
+      prjGridTasks.appendChild(deleteTaskBtn);
+
+      deleteTaskBtn.addEventListener("click", function () {
+        console.log(projectClasses[currentProject].todos[i]);
+        delete projectClasses[currentProject].todos[i];
+        console.log(projectClasses[currentProject].todos[i]);
+        console.log(projectClasses[currentProject].todos);
+        clearPage(prjGridTasks);
+        popTasksGrid();
+      });
+    }
   }
 };
 
@@ -54,7 +65,7 @@ export const taskModalInit = function () {
     tasksArray.push(newTask); // TEMPORARY
 
     projectClasses[currentProject].todos.push(newTask);
-    console.log(projectClasses[currentProject].todos[0].taskName);
+    // console.log(projectClasses[currentProject].todos[0].taskName);
   };
 
   //   const popTasksGrid = function () {
