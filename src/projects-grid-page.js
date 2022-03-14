@@ -15,31 +15,44 @@ const createProjectsGrid = function () {
 const popProjectectsGrid = function () {
   for (let i = 0; i < projectClasses.length; i++) {
     console.log(projectClasses[i]);
+    if (projectClasses[i] != undefined) {
+      const projectSummary = document.createElement("div");
+      projectSummary.classList.add("project-summary");
+      projectsGrid.appendChild(projectSummary);
 
-    const projectSummary = document.createElement("div");
-    projectSummary.classList.add("project-summary");
-    projectsGrid.appendChild(projectSummary);
+      const projectTitleDisplay = document.createElement("h3");
+      projectSummary.appendChild(projectTitleDisplay);
+      projectTitleDisplay.textContent = projectClasses[i].projectTitle;
 
-    const projectTitleDisplay = document.createElement("h3");
-    projectSummary.appendChild(projectTitleDisplay);
-    projectTitleDisplay.textContent = projectClasses[i].projectTitle;
+      const projectDescriptionDisplay = document.createElement("p");
+      projectSummary.appendChild(projectDescriptionDisplay);
+      projectDescriptionDisplay.textContent =
+        projectClasses[i].projectDescription;
 
-    const projectDescriptionDisplay = document.createElement("p");
-    projectSummary.appendChild(projectDescriptionDisplay);
-    projectDescriptionDisplay.textContent =
-      projectClasses[i].projectDescription;
+      const addTask = document.createElement("button");
+      addTask.textContent = "Add Tasks";
+      projectSummary.appendChild(addTask);
 
-    const addTask = document.createElement("button");
-    addTask.textContent = "Add Tasks";
-    projectSummary.appendChild(addTask);
+      addTask.addEventListener("click", function () {
+        currentProject = i;
+        console.log(currentProject);
+        console.log(projectClasses[i]);
+        clearPage(rightSide);
+        projectPage(rightSide);
+      });
 
-    addTask.addEventListener("click", function () {
-      currentProject = i;
-      console.log(currentProject);
-      console.log(projectClasses[i]);
-      clearPage(rightSide);
-      projectPage(rightSide);
-    });
+      const deletePrj = document.createElement("button");
+      deletePrj.textContent = "Delete";
+      projectSummary.appendChild(deletePrj);
+
+      deletePrj.addEventListener("click", function () {
+        console.log(projectClasses);
+        delete projectClasses[i];
+        console.log(projectClasses);
+        clearPage(projectsGrid);
+        projectsGridPage();
+      });
+    }
   }
 };
 

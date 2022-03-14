@@ -51,4 +51,7 @@ export const modalFunction = function () {
     // CREATE AND POPULATE PROJECTS GRID
     projectsGridPage();
   });
+
+  const closeBtn = document.querySelector(".close");
+  closeBtn.addEventListener("click", closeModal);
 };

@@ -103,6 +103,10 @@ export const taskModalInit = function () {
     // taskImportantOutput.textContent = getImportant();
     // prjGridTasks.appendChild(taskImportantOutput);
   });
+  const closeTaskBtn = document.querySelector(".close-task-modal");
+  closeTaskBtn.addEventListener("click", function () {
+    taskModalContainer.style.display = "none";
+  });
 };
 
 //   addNewTaskBtn.addEventListener("click", function () {
