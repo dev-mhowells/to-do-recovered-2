@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hubballi&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="tasks-modal-container" id="tasks-modal-container">
@@ -24,17 +27,18 @@
 </div>
     </div>
     <div class="modal-container" id="modal-container">
-        <form action="">
+        <form action="" autocomplete="off">
           <div class="modal">
             <div class="close">+</div>
           <h2>New Project</h2>
           <div class="modal-el project-title-box">
-            <label for="project-title">Project title</label>
+            <label for="project-title">Project title: </label>
             <input
               type="text"
               class="project-title"
               id="project-title"
               name="project-title"
+              value=""
             />
           </div>
           <div class="modal-el description-box">
@@ -47,11 +51,11 @@
             ></textarea>
           </div>
           <div class="modal-el due-date-box">
-            <label for="due-date">Due date:</label>
+            <label for="due-date">Due date: </label>
             <input type="date" id="date" name="date" value="2022-01-01" />
           </div>
           <div class="modal-el priority-box">
-            <p>Priority</p>
+            <p>Priority: </p>
             <input
               type="radio"
               id="low"
@@ -92,7 +96,7 @@
         <nav class="navbar">
           <ul>
             <li class="all-projects" id="all-projects">
-              Projects 
+              My Projects 
             </li>
             <li>New Project <button id="add-project" class="add-project">+</button></li>
           </ul>

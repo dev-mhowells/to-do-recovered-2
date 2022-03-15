@@ -29,7 +29,10 @@ export const clearPage = function (element) {
 // OPEN CLOSE MODAL
 const openModal = function () {
   modal_container.style.display = "flex";
-  console.log("testing");
+  document.getElementById("project-title").value = "";
+  document.getElementById("description").value = "";
+  document.getElementById("date").value = "";
+  document.querySelector("#high").checked = true;
 };
 
 export const closeModal = function () {

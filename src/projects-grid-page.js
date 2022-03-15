@@ -52,6 +52,12 @@ const popProjectectsGrid = function () {
         clearPage(projectsGrid);
         projectsGridPage();
       });
+
+      const editPrj = document.createElement("button");
+      editPrj.textContent = "Edit";
+      projectSummary.appendChild(editPrj);
+
+      editPrj.addEventListener("click", function () {});
     }
   }
 };
