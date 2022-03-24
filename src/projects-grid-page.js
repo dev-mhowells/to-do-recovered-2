@@ -53,11 +53,11 @@ const popProjectectsGrid = function () {
         projectsGridPage();
       });
 
-      const editPrj = document.createElement("button");
-      editPrj.textContent = "Edit";
-      projectSummary.appendChild(editPrj);
+      // const editPrj = document.createElement("button");
+      // editPrj.textContent = "Edit";
+      // projectSummary.appendChild(editPrj);
 
-      editPrj.addEventListener("click", function () {});
+      // editPrj.addEventListener("click", function () {});
     }
   }
 };

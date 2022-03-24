@@ -25,6 +25,8 @@ export const popTasksGrid = function () {
       prjGridTasks.appendChild(taskImportantOutput);
 
       const deleteTaskBtn = document.createElement("button");
+      deleteTaskBtn.classList.add("button");
+      deleteTaskBtn.textContent = "Delete";
       prjGridTasks.appendChild(deleteTaskBtn);
 
       deleteTaskBtn.addEventListener("click", function () {
