@@ -53,7 +53,8 @@ h1 {
 
 .navbar {
   grid-column: 1;
-  background-color: #1565c0;
+  /* background-color: #1565c0; */
+  background-color: pink;
   color: white;
   font-size: 24px;
   display: grid;
